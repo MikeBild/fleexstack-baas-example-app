@@ -1,0 +1,83 @@
+# BaaS Schema for Sample App Testing
+version: "1"
+name: "Sample App API"
+
+models:
+  - name: Product
+    tableName: products
+    timestamps: true
+    fields:
+      - name: id
+        type: ID!
+        primaryKey: true
+        autoGenerate: true
+
+      - name: title
+        type: String!
+        required: true
+
+      - name: description
+        type: String
+
+      - name: price
+        type: Float!
+        required: true
+
+      - name: inStock
+        type: Boolean!
+        default: true
+
+      - name: categoryId
+        type: ID
+
+      - name: category
+        type: Category
+        relation: belongsTo
+
+  - name: Category
+    tableName: categories
+    timestamps: true
+    fields:
+      - name: id
+        type: ID!
+        primaryKey: true
+        autoGenerate: true
+
+      - name: name
+        type: String!
+        required: true
+        unique: true
+
+      - name: products
+        type: [Product]
+        relation: hasMany
+
+# Storage configuration
+storage:
+  enabled: true
+  provider: local
+  maxFileSize: 5MB
+  allowedTypes:
+    - image/jpeg
+    - image/png
+
+# Authentication
+authentication:
+  enabled: true
+  providers:
+    - email
+  tokenExpiry: 7d
+
+# Permissions
+permissions:
+  - model: Product
+    read: ["public"]
+    create: ["admin"]
+    update: ["admin"]
+    delete: ["admin"]
+
+  - model: Category
+    read: ["public"]
+    create: ["admin"]
+    update: ["admin"]
+    delete: ["admin"]

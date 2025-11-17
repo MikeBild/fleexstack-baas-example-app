@@ -1,0 +1,20 @@
+{
+  "name": "fleexstack-sample-app",
+  "version": "1.0.0",
+  "description": "Sample Bass Node.js application for FleexStack deployment testing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "fleexstack",
+    "sample",
+    "deployment"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

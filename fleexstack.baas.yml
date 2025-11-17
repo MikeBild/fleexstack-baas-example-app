@@ -1,6 +1,6 @@
 # BaaS Schema for Sample App Testing
 version: "1"
-name: "Sample App API"
+name: "Baas Sample App API"
 
 models:
   - name: Product

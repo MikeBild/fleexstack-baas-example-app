@@ -1,5 +1,5 @@
 {
-  "name": "fleexstack-sample-app",
+  "name": "fleexstack-baas-sample-app",
   "version": "1.0.0",
   "description": "Sample Bass Node.js application for FleexStack deployment testing",
   "main": "index.js",
